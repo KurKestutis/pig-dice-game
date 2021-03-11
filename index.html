@@ -15,10 +15,10 @@
   <body class="body">
     <header class="header"><h1 class="header__text">Pig Dice Game</h1></header>
     <main class="main">
-      <section class="playArena">
-        <article class="playArena__player1">
-          <h2 class="playArena__player1__playerName">Player 1</h2>
-          <p class="playArena__player1__pointsEarned">0</p>
+      <section class="play-arena">
+        <article class="play-arena__player1">
+          <h2 class="play-arena__player1__player-name">Player 1</h2>
+          <p class="play-arena__player1__points-earned">0</p>
           <div class="current">
             <p class="current__label">CURRENT</p>
             <p class="current__score" id="current--1">0</p>
@@ -29,9 +29,9 @@
           </div>
         </article>
 
-        <article class="playArena__player2">
-          <h2 class="playArena__player2__playerName">Player 2</h2>
-          <p class="playArena__player2__pointsEarned">0</p>
+        <article class="play-arena__player2">
+          <h2 class="play-arena__player2__player-name">Player 2</h2>
+          <p class="play-arena__player2__points-earned">0</p>
           <div class="current">
             <p class="current__label">CURRENT</p>
             <p class="current__score" id="current--2">0</p>
@@ -40,6 +40,13 @@
             <p class="projection__label">PROJECTION</p>
             <p class="projection__score" id="projection--2">0</p>
           </div>
+        </article>
+
+        <article class="control-panel">
+          <img src="" alt="dice" class="control-panel__dice-pic" />
+          <button class="control-panel__btn--roll">Roll</button>
+          <button class="control-panel__btn--hold">Hold</button>
+          <button class="control-panel__btn--new-game">New game</button>
         </article>
       </section>
     </main>

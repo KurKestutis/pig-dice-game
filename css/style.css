@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: "Courier New", monospace;
 }
 
 .body {
@@ -12,8 +13,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: -webkit-gradient(linear, right bottom, left top, color-stop(6.2%, rgba(202, 175, 224, 0.726)), color-stop(98.8%, rgba(67, 151, 200, 0.377)));
-  background-image: linear-gradient(to top left, rgba(202, 175, 224, 0.726) 6.2%, rgba(67, 151, 200, 0.377) 98.8%);
+  background-image: -webkit-gradient(linear, right bottom, left top, color-stop(35%, rgba(202, 175, 224, 0.726)), color-stop(90%, rgba(67, 151, 200, 0.377)));
+  background-image: linear-gradient(to top left, rgba(202, 175, 224, 0.726) 35%, rgba(67, 151, 200, 0.377) 90%);
 }
 
 .header__text {
@@ -35,17 +36,10 @@
           justify-content: center;
 }
 
-.footer {
-  text-align: end;
-  padding: 0.5rem 1rem;
-  -webkit-box-shadow: 0rem 0.5rem 1.2rem 0rem rgba(112, 112, 112, 0.534);
-          box-shadow: 0rem 0.5rem 1.2rem 0rem rgba(112, 112, 112, 0.534);
-}
-
-.playArena {
+.play-arena {
   position: relative;
-  width: 60rem;
-  height: 40rem;
+  width: 50rem;
+  height: 35rem;
   -webkit-box-shadow: 0rem 0rem 4rem 0.1rem rgba(75, 74, 74, 0.37);
           box-shadow: 0rem 0rem 4rem 0.1rem rgba(75, 74, 74, 0.37);
   display: -webkit-box;
@@ -55,15 +49,15 @@
   overflow: hidden;
 }
 
-.playArena__player1 {
+.play-arena__player1 {
   background-color: #447ec0;
 }
 
-.playArena__player2 {
+.play-arena__player2 {
   background-color: #92377b;
 }
 
-.playArena__player1, .playArena__player2 {
+.play-arena__player1, .play-arena__player2 {
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -80,10 +74,20 @@
   position: relative;
 }
 
+.play-arena__player1__player-name, .play-arena__player2__player-name {
+  padding-top: 3rem;
+  font-size: 2rem;
+}
+
+.play-arena__player1__points-earned, .play-arena__player2__points-earned {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
 .current {
   width: 20%;
   height: 4rem;
-  border: 0.1rem solid;
+  border: 0.05rem solid #959592;
   border-radius: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -97,9 +101,57 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-shadow: 0rem 0rem 4rem 0.1rem rgba(75, 74, 74, 0.37);
-          box-shadow: 0rem 0rem 4rem 0.1rem rgba(75, 74, 74, 0.37);
+  padding: 1rem;
+  -webkit-box-shadow: 0rem 0rem 4rem 0.9rem rgba(251, 251, 251, 0.5);
+          box-shadow: 0rem 0rem 4rem 0.9rem rgba(251, 251, 251, 0.5);
   background-image: -webkit-gradient(linear, right bottom, left top, color-stop(6.2%, rgba(202, 175, 224, 0.726)), color-stop(98.8%, rgba(67, 151, 200, 0.377)));
   background-image: linear-gradient(to top left, rgba(202, 175, 224, 0.726) 6.2%, rgba(67, 151, 200, 0.377) 98.8%);
+}
+
+.control-panel {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.control-panel__dice-pic {
+  padding: 5rem;
+}
+
+.control-panel__btn--new-game, .control-panel__btn--roll, .control-panel__btn--hold {
+  background-color: #e0dbdf;
+  width: 7rem;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.control-panel__btn--new-game:hover, .control-panel__btn--roll:hover, .control-panel__btn--hold:hover {
+  background-color: #9e7dc5;
+}
+
+.control-panel__btn--new-game:active, .control-panel__btn--roll:active, .control-panel__btn--hold:active {
+  background-color: #aa239f;
+}
+
+.footer {
+  text-align: end;
+  padding: 0.5rem 1rem;
+  -webkit-box-shadow: 0rem 0.5rem 1.2rem 0rem rgba(112, 112, 112, 0.534);
+          box-shadow: 0rem 0.5rem 1.2rem 0rem rgba(112, 112, 112, 0.534);
 }
 /*# sourceMappingURL=style.css.map */
