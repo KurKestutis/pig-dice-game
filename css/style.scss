@@ -1,0 +1,57 @@
+$color_1: red;
+$color_2: rgb(68, 126, 192);
+$color_3: rgb(146, 55, 123);
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(
+    to top left,
+    rgba(202, 175, 224, 0.726) 6.2%,
+    rgba(67, 151, 200, 0.377) 98.8%
+  );
+}
+
+.header {
+  &__text {
+    margin: 1rem;
+  }
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  text-align: end;
+  padding: 0.5rem 1rem;
+  box-shadow: 0rem 0.5rem 1.2rem 0rem rgba(112, 112, 112, 0.534);
+}
+
+.playArena {
+  width: 60rem;
+  height: 40rem;
+  background-color: $color_1;
+  box-shadow: 0rem 0rem 4rem 0.1rem rgba(75, 74, 74, 0.37);
+  border-radius: 1rem;
+
+  display: flex;
+
+  &__player1 {
+    background-color: $color_2;
+    width: 50%;
+  }
+  &__player2 {
+    background-color: $color_3;
+    width: 50%;
+  }
+}
