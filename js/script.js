@@ -6,11 +6,39 @@ let player2Score = 0;
 let player1CurrentScore = 0;
 let player2CurrentScore = 0;
 
+let img = document.querySelector(".control-panel__dice-pic");
+
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   const score = Math.floor(Math.random() * (max - min + 1) + min);
   console.log(score);
+
+  // img.src = "/img/Dice-3.png";
+
+  switch (score) {
+    case 1:
+      img.src = "/img/Dice-1.png";
+      break;
+    case 2:
+      img.src = "/img/Dice-2.png";
+      break;
+    case 3:
+      img.src = "/img/Dice-3.png";
+      break;
+    case 4:
+      img.src = "/img/Dice-4.png";
+      break;
+    case 5:
+      img.src = "/img/Dice-5.png";
+      break;
+    case 6:
+      img.src = "/img/Dice-6.png";
+      break;
+    default:
+      img.src = "/img/Dice-0.png";
+  }
+
   return score;
 }
 
@@ -57,4 +85,5 @@ document
     currentSum = 0;
     current1Array = [];
     current1Doc.textContent = currentSum;
+    img.src = "/img/Dice-0.png";
   });
