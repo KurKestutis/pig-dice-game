@@ -101,7 +101,11 @@ $color_4: rgb(224, 219, 223);
   align-items: center;
 
   &__dice-pic {
-    padding: 5rem;
+    margin: 5rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1rem;
+    border: 0.1rem solid red;
   }
 
   &__btn {

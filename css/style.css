@@ -129,7 +129,11 @@
 }
 
 .control-panel__dice-pic {
-  padding: 5rem;
+  margin: 5rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 1rem;
+  border: 0.1rem solid red;
 }
 
 .control-panel__btn--new-game, .control-panel__btn--roll, .control-panel__btn--hold {

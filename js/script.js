@@ -15,7 +15,7 @@ function getRandomIntInclusive(min, max) {
 }
 
 let current1Doc = document.querySelector(".current__score");
-const current2Doc = document.querySelector(".current--2");
+let current2Doc = document.querySelector(".current--2");
 
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 let currentSum = 0;
@@ -31,13 +31,11 @@ document
     if (diceScore === 1) {
       console.log("You rolled 1 throw passes to another player");
       current1Array = [];
-      console.log(current1Array);
-      current1Doc.textContent = 0;
+      currentSum = 0;
+      current1Doc.textContent = "ZERO";
     } else {
       current1Array.push(diceScore);
-      console.log(current1Array);
       currentSum = current1Array.reduce(reducer);
-      console.log(currentSum);
       current1Doc.textContent = currentSum;
     }
   });
@@ -56,4 +54,7 @@ document
   .addEventListener("click", function () {
     total1 += currentSum;
     firstTotal.textContent = total1;
+    currentSum = 0;
+    current1Array = [];
+    current1Doc.textContent = currentSum;
   });
