@@ -108,6 +108,11 @@
   background-image: linear-gradient(to top left, rgba(202, 175, 224, 0.726) 6.2%, rgba(67, 151, 200, 0.377) 98.8%);
 }
 
+.active {
+  -webkit-box-shadow: inset 0px 0px 36px 5px white;
+          box-shadow: inset 0px 0px 36px 5px white;
+}
+
 .control-panel {
   position: absolute;
   left: 50%;
@@ -120,20 +125,40 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   height: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
+.control-panel__placeholder {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .control-panel__dice-pic {
-  margin: 5rem;
   width: 6rem;
   height: 6rem;
   border-radius: 1rem;
   border: 0.1rem solid red;
+}
+
+.control-panel__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 50%;
 }
 
 .control-panel__btn--new-game, .control-panel__btn--roll, .control-panel__btn--hold {
@@ -152,9 +177,8 @@
   background-color: #e048d4;
 }
 
-.active {
-  -webkit-box-shadow: inset 0px 0px 36px 5px white;
-          box-shadow: inset 0px 0px 36px 5px white;
+.hidden {
+  display: none;
 }
 
 .footer {

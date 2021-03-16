@@ -17,14 +17,29 @@ const btnNewGame = document.querySelector(".control-panel__btn--roll");
 function rollDice() {
   const score = Math.trunc(Math.random() * 6 + 1);
   img.src = `/img/Dice-${score}.png`;
+  img.classList.remove("hidden");
   return score;
 }
 
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
-let currentSum = 0;
+// === DICE SCORING ===
 
+const scores = [0, 0];
+let currentSum = 0;
+let activePlayer = 0;
+
+// === Dice archiving ===
+
+let allDice = [];
+
+let player0Dice = [];
+let player1Dice = [];
+
+let player0CurrentDice = [];
+let player1CurrentDice = [];
+
+// Counting system
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
 let current1Array = [];
-let current2 = [];
 
 // ======================= START PLAYNG =========================
 
@@ -41,7 +56,7 @@ btnRoll.addEventListener("click", function () {
   }
 });
 
-// =======================TOTAL=========================
+// ======================= HOLD =========================
 
 let total1 = 0;
 let total2 = 0;
@@ -52,5 +67,5 @@ btnHold.addEventListener("click", function () {
   currentSum = 0;
   current1Array = [];
   current_El_0.textContent = currentSum;
-  img.src = "/img/Dice-0.png";
+  img.classList.add("hidden");
 });
