@@ -1,10 +1,10 @@
-// alert("Hi");
+// html elements selecting
 
-let player1Score = 0;
-let player2Score = 0;
+const total_El_0 = document.getElementById("total--0");
+const total_El_1 = document.getElementById("total--1");
 
-let player1CurrentScore = 0;
-let player2CurrentScore = 0;
+let current_El_0 = document.getElementById("current--0");
+let current_El_1 = document.getElementById("current--1");
 
 let img = document.querySelector(".control-panel__dice-pic");
 
@@ -12,9 +12,6 @@ function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   const score = Math.floor(Math.random() * (max - min + 1) + min);
-  console.log(score);
-
-  // img.src = "/img/Dice-3.png";
 
   switch (score) {
     case 1:
@@ -38,18 +35,13 @@ function getRandomIntInclusive(min, max) {
     default:
       img.src = "/img/Dice-0.png";
   }
-
   return score;
 }
-
-let current1Doc = document.querySelector(".current__score");
-let current2Doc = document.querySelector(".current--2");
 
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 let currentSum = 0;
 
 let current1Array = [];
-console.log(current1Array);
 let current2 = [];
 
 document
@@ -60,11 +52,11 @@ document
       console.log("You rolled 1 throw passes to another player");
       current1Array = [];
       currentSum = 0;
-      current1Doc.textContent = "ZERO";
+      current_El_0.textContent = "ZERO";
     } else {
       current1Array.push(diceScore);
       currentSum = current1Array.reduce(reducer);
-      current1Doc.textContent = currentSum;
+      current_El_0.textContent = currentSum;
     }
   });
 
@@ -73,17 +65,13 @@ document
 let total1 = 0;
 let total2 = 0;
 
-const firstTotal = document.querySelector(
-  ".play-arena__player1__points-earned"
-);
-
 document
   .querySelector(".control-panel__btn--hold")
   .addEventListener("click", function () {
     total1 += currentSum;
-    firstTotal.textContent = total1;
+    total_El_0.textContent = total1;
     currentSum = 0;
     current1Array = [];
-    current1Doc.textContent = currentSum;
+    current_El_0.textContent = currentSum;
     img.src = "/img/Dice-0.png";
   });
