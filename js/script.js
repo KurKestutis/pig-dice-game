@@ -1,4 +1,6 @@
 // html elements selecting
+const player0 = document.querySelector(".play-arena__player0");
+const player1 = document.querySelector(".play-arena__player1");
 
 const total_El_0 = document.getElementById("total--0");
 const total_El_1 = document.getElementById("total--1");
@@ -24,10 +26,11 @@ let currentSum = 0;
 let current1Array = [];
 let current2 = [];
 
+// ======================= START PLAYNG =========================
+
 btnRoll.addEventListener("click", function () {
   const diceScore = rollDice();
   if (diceScore === 1) {
-    console.log("You rolled 1 throw passes to another player");
     current1Array = [];
     currentSum = 0;
     current_El_0.textContent = "ZERO";

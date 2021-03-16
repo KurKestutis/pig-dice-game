@@ -49,15 +49,15 @@
   overflow: hidden;
 }
 
-.play-arena__player1 {
+.play-arena__player0 {
   background-color: #447ec0;
 }
 
-.play-arena__player2 {
+.play-arena__player1 {
   background-color: #92377b;
 }
 
-.play-arena__player1, .play-arena__player2 {
+.play-arena__player0, .play-arena__player1 {
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -74,12 +74,12 @@
   position: relative;
 }
 
-.play-arena__player1__player-name, .play-arena__player2__player-name {
+.play-arena__player0__player-name, .play-arena__player1__player-name {
   padding-top: 3rem;
   font-size: 2rem;
 }
 
-.play-arena__player1__points-earned, .play-arena__player2__points-earned {
+.play-arena__player0__points-earned, .play-arena__player1__points-earned {
   font-size: 4rem;
   font-weight: 600;
 }
@@ -150,6 +150,11 @@
 
 .control-panel__btn--new-game:active, .control-panel__btn--roll:active, .control-panel__btn--hold:active {
   background-color: #e048d4;
+}
+
+.active {
+  -webkit-box-shadow: inset 0px 0px 36px 5px white;
+          box-shadow: inset 0px 0px 36px 5px white;
 }
 
 .footer {

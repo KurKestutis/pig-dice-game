@@ -42,15 +42,15 @@ $color_4: rgb(224, 219, 223);
   border-radius: 1rem;
   overflow: hidden;
 
-  &__player1 {
+  &__player0 {
     background-color: $color_2;
   }
-  &__player2 {
+  &__player1 {
     background-color: $color_3;
   }
 
-  &__player1,
-  &__player2 {
+  &__player0,
+  &__player1 {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -126,6 +126,10 @@ $color_4: rgb(224, 219, 223);
       }
     }
   }
+}
+
+.active {
+  box-shadow: inset 0px 0px 36px 5px rgba(255, 255, 255, 1);
 }
 
 .footer {
