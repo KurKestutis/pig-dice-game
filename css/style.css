@@ -285,6 +285,12 @@
           animation: rollDice2 0.3s;
 }
 
+.winner {
+  background-color: #b2cc1c;
+  -webkit-box-shadow: inset 0px 0px 66px 5px #f8f8f8;
+          box-shadow: inset 0px 0px 66px 5px #f8f8f8;
+}
+
 .footer {
   text-align: end;
   padding: 0.5rem 1rem;

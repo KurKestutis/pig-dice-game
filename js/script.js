@@ -23,52 +23,72 @@ function rollDice() {
   return score;
 }
 
-// === DICE SCORING ===
+const changePlayer = function () {
+  currentScore = 0;
+  document.getElementById(
+    `current--${activePlayer}`
+  ).textContent = currentScore;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  player0.classList.toggle("active");
+  player1.classList.toggle("active");
+};
 
+// === DICE SCORING ===
 const scores = [0, 0];
-let currentSum = 0;
+let currentScore = 0;
 let activePlayer = 0;
+let playing = true;
 
 // === Dice archiving ===
-
 let allDice = [];
 
 let player0Dice = [];
 let player1Dice = [];
 
-let player0CurrentDice = [];
-let player1CurrentDice = [];
-
 // Counting system
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
-let current1Array = [];
 
 // ======================= START PLAYNG =========================
 
 btnRoll.addEventListener("click", function () {
-  const diceScore = rollDice();
-
-  if (diceScore === 1) {
-    current1Array = [];
-    currentSum = 0;
-    current_El_0.textContent = "ZERO";
-  } else {
-    current1Array.push(diceScore);
-    currentSum = current1Array.reduce(reducer);
-    current_El_0.textContent = currentSum;
+  if (playing) {
+    const diceScore = rollDice();
+    if (diceScore === 1) {
+      changePlayer();
+    } else {
+      currentScore += diceScore;
+      document.getElementById(
+        `current--${activePlayer}`
+      ).textContent = currentScore;
+    }
   }
 });
 
 // ======================= HOLD =========================
 
-let total1 = 0;
-let total2 = 0;
-
 btnHold.addEventListener("click", function () {
-  total1 += currentSum;
-  total_El_0.textContent = total1;
-  currentSum = 0;
-  current1Array = [];
-  current_El_0.textContent = currentSum;
   img.classList.add("hidden");
+  scores[activePlayer] += currentScore;
+
+  document.getElementById(`total--${activePlayer}`).textContent =
+    scores[activePlayer];
+  console.log(scores[activePlayer]);
+  if (scores[activePlayer] >= 10) {
+    playing = false;
+    console.log(`Winner is Player ${activePlayer}`);
+
+    document
+      .querySelector(`.play-arena__player${activePlayer}`)
+      .classList.add("winner");
+
+    document
+      .querySelector(`.play-arena__player${activePlayer}`)
+      .classList.remove("active");
+
+    document.querySelector(
+      `.play-arena__player${activePlayer}__player-name`
+    ).textContent += ` WIN! `;
+  } else {
+    changePlayer();
+  }
 });

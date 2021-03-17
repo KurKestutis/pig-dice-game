@@ -190,6 +190,11 @@ $color_4: rgb(224, 219, 223);
   animation: rollDice2 0.3s;
 }
 
+.winner {
+  background-color: rgb(178, 204, 28);
+  box-shadow: inset 0px 0px 66px 5px rgb(248, 248, 248);
+}
+
 .footer {
   text-align: end;
   padding: 0.5rem 1rem;
