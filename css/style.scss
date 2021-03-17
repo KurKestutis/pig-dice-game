@@ -23,6 +23,8 @@ $color_4: rgb(224, 219, 223);
 .header {
   &__text {
     margin: 1rem;
+    // animation: 3s ease-in 1s infinite reverse both running slidein;
+    animation: move 1s infinite;
   }
 }
 
@@ -142,6 +144,50 @@ $color_4: rgb(224, 219, 223);
 
 .hidden {
   display: none;
+}
+
+@keyframes rollDice1 {
+  0% {
+    transform: translateY(1px);
+  }
+  25% {
+    transform: translateX(2px);
+  }
+  50% {
+    transform: translateY(-1px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateY(1px);
+  }
+}
+
+@keyframes rollDice2 {
+  0% {
+    transform: translateY(1px);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateY(-1px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}
+
+.move1 {
+  animation: rollDice1 0.2s;
+}
+
+.move2 {
+  animation: rollDice2 0.3s;
 }
 
 .footer {

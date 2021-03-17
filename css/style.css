@@ -19,6 +19,8 @@
 
 .header__text {
   margin: 1rem;
+  -webkit-animation: move 1s infinite;
+          animation: move 1s infinite;
 }
 
 .main {
@@ -179,6 +181,108 @@
 
 .hidden {
   display: none;
+}
+
+@-webkit-keyframes rollDice1 {
+  0% {
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+  }
+  25% {
+    -webkit-transform: translateX(2px);
+            transform: translateX(2px);
+  }
+  50% {
+    -webkit-transform: translateY(-1px);
+            transform: translateY(-1px);
+  }
+  75% {
+    -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);
+  }
+  100% {
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+  }
+}
+
+@keyframes rollDice1 {
+  0% {
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+  }
+  25% {
+    -webkit-transform: translateX(2px);
+            transform: translateX(2px);
+  }
+  50% {
+    -webkit-transform: translateY(-1px);
+            transform: translateY(-1px);
+  }
+  75% {
+    -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);
+  }
+  100% {
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+  }
+}
+
+@-webkit-keyframes rollDice2 {
+  0% {
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+  }
+  25% {
+    -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);
+  }
+  50% {
+    -webkit-transform: translateY(-1px);
+            transform: translateY(-1px);
+  }
+  75% {
+    -webkit-transform: translateX(2px);
+            transform: translateX(2px);
+  }
+  100% {
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+  }
+}
+
+@keyframes rollDice2 {
+  0% {
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+  }
+  25% {
+    -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);
+  }
+  50% {
+    -webkit-transform: translateY(-1px);
+            transform: translateY(-1px);
+  }
+  75% {
+    -webkit-transform: translateX(2px);
+            transform: translateX(2px);
+  }
+  100% {
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+  }
+}
+
+.move1 {
+  -webkit-animation: rollDice1 0.2s;
+          animation: rollDice1 0.2s;
+}
+
+.move2 {
+  -webkit-animation: rollDice2 0.3s;
+          animation: rollDice2 0.3s;
 }
 
 .footer {

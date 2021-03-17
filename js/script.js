@@ -18,6 +18,8 @@ function rollDice() {
   const score = Math.trunc(Math.random() * 6 + 1);
   img.src = `/img/Dice-${score}.png`;
   img.classList.remove("hidden");
+  img.classList.toggle("move1");
+  img.classList.toggle("move2");
   return score;
 }
 
@@ -45,6 +47,7 @@ let current1Array = [];
 
 btnRoll.addEventListener("click", function () {
   const diceScore = rollDice();
+
   if (diceScore === 1) {
     current1Array = [];
     currentSum = 0;
