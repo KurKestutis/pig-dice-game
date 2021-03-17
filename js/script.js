@@ -12,7 +12,26 @@ let img = document.querySelector(".control-panel__dice-pic");
 
 const btnRoll = document.querySelector(".control-panel__btn--roll");
 const btnHold = document.querySelector(".control-panel__btn--hold");
-const btnNewGame = document.querySelector(".control-panel__btn--roll");
+const btnNewGame = document.querySelector(".control-panel__btn--new-game");
+
+let scores, currentScore, activePlayer, playing;
+
+const init = function () {
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
+
+  total_El_0.textContent = 0;
+  total_El_1.textContent = 0;
+  current_El_0.textContent = 0;
+  current_El_1.textContent = 0;
+
+  player0.classList.add("active");
+  player1.classList.remove("active");
+};
+
+init();
 
 function rollDice() {
   const score = Math.trunc(Math.random() * 6 + 1);
@@ -32,12 +51,6 @@ const changePlayer = function () {
   player0.classList.toggle("active");
   player1.classList.toggle("active");
 };
-
-// === DICE SCORING ===
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
 
 // === Dice archiving ===
 let allDice = [];
@@ -67,28 +80,31 @@ btnRoll.addEventListener("click", function () {
 // ======================= HOLD =========================
 
 btnHold.addEventListener("click", function () {
-  img.classList.add("hidden");
-  scores[activePlayer] += currentScore;
+  if (playing) {
+    img.classList.add("hidden");
+    scores[activePlayer] += currentScore;
 
-  document.getElementById(`total--${activePlayer}`).textContent =
-    scores[activePlayer];
-  console.log(scores[activePlayer]);
-  if (scores[activePlayer] >= 10) {
-    playing = false;
-    console.log(`Winner is Player ${activePlayer}`);
+    document.getElementById(`total--${activePlayer}`).textContent =
+      scores[activePlayer];
+    if (scores[activePlayer] >= 10) {
+      playing = false;
+      document
+        .querySelector(`.play-arena__player${activePlayer}`)
+        .classList.add("winner");
 
-    document
-      .querySelector(`.play-arena__player${activePlayer}`)
-      .classList.add("winner");
-
-    document
-      .querySelector(`.play-arena__player${activePlayer}`)
-      .classList.remove("active");
-
-    document.querySelector(
-      `.play-arena__player${activePlayer}__player-name`
-    ).textContent += ` WIN! `;
-  } else {
-    changePlayer();
+      document
+        .querySelector(`.play-arena__player${activePlayer}`)
+        .classList.remove("active");
+    } else {
+      changePlayer();
+    }
   }
+});
+
+btnNewGame.addEventListener("click", function () {
+  document
+    .querySelector(`.play-arena__player${activePlayer}`)
+    .classList.remove("winner");
+
+  init();
 });
