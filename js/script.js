@@ -13,13 +13,15 @@ let projectionEl1 = document.getElementById("projection--1");
 
 let img = document.querySelector(".control-panel__dice-pic");
 
+const btnSet = document.getElementById("setNewWinCondition");
 const btnRoll = document.querySelector(".control-panel__btn--roll");
 const btnHold = document.querySelector(".control-panel__btn--hold");
 const btnNewGame = document.querySelector(".control-panel__btn--new-game");
 
-let scores, currentScore, activePlayer, playing, projectionScore;
+let scores, currentScore, activePlayer, playing, projectionScore, winningPoints;
 
 const init = function () {
+  winningPoints = document.getElementById("newWinCondition").value;
   scores = [0, 0];
   currentScore = 0;
   activePlayer = 0;
@@ -40,7 +42,15 @@ const init = function () {
 
 init();
 
-function rollDice() {
+btnSet.addEventListener("click", function () {
+  document
+    .querySelector(`.play-arena__player${activePlayer}`)
+    .classList.remove("winner");
+  init();
+  document.getElementById("winCondition").textContent = winningPoints;
+});
+
+rollDice = () => {
   const score = Math.trunc(Math.random() * 6 + 1);
   img.src = `img/Dice-${score}.png`;
   img.classList.remove("hidden");
@@ -55,9 +65,9 @@ function rollDice() {
   }
 
   return score;
-}
+};
 
-const changePlayer = function () {
+const changePlayer = () => {
   currentScore = 0;
   projectionScore = 0;
   document.getElementById(
@@ -108,7 +118,7 @@ btnHold.addEventListener("click", function () {
 
     document.getElementById(`total--${activePlayer}`).textContent =
       scores[activePlayer];
-    if (scores[activePlayer] >= 30) {
+    if (scores[activePlayer] >= winningPoints) {
       playing = false;
       document
         .querySelector(`.play-arena__player${activePlayer}`)

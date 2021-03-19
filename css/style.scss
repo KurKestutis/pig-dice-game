@@ -21,11 +21,35 @@ $color_4: rgb(224, 219, 223);
 }
 
 .header {
-  &__text {
+  &__text,
+  &__form {
     margin: 1rem;
-    // animation: 3s ease-in 1s infinite reverse both running slidein;
-    animation: move 1s infinite;
+
+    &__input {
+      border-radius: 0.5rem;
+    }
   }
+}
+
+@mixin button {
+  background-color: $color_4;
+  width: 7rem;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 1rem;
+
+  &:hover {
+    background-color: rgb(158, 125, 197);
+  }
+  &:active {
+    background-color: rgb(224, 72, 212);
+  }
+}
+
+.btn {
+  @include button();
+  width: 5rem;
+  padding: 0.3rem;
 }
 
 .main {
@@ -131,18 +155,7 @@ $color_4: rgb(224, 219, 223);
     &--new-game,
     &--roll,
     &--hold {
-      background-color: $color_4;
-      width: 7rem;
-      border: none;
-      padding: 0.5rem;
-      border-radius: 1rem;
-
-      &:hover {
-        background-color: rgb(158, 125, 197);
-      }
-      &:active {
-        background-color: rgb(224, 72, 212);
-      }
+      @include button();
     }
   }
 }

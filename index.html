@@ -13,7 +13,27 @@
   </head>
 
   <body class="body">
-    <header class="header"><h1 class="header__text">Pig Dice Game</h1></header>
+    <header class="header"
+      ><h1 class="header__text">Pig Dice Game</h1>
+      <div class="header__form">
+        <p>Winning condition <span id="winCondition">50</span></p>
+        <label class="header__form__label" for="newWinCondition"
+          >Set new winning condition:</label
+        >
+
+        <input
+          class="header__form__input"
+          type="number"
+          id="newWinCondition"
+          name="newWinCondition"
+          step="10"
+          min="10"
+          max="100"
+        />
+
+        <button type="text" class="btn" id="setNewWinCondition">Enter</button>
+      </div>
+    </header>
     <main class="main">
       <section class="play-arena">
         <article class="play-arena__player0 active">
