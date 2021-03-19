@@ -35,7 +35,7 @@ init();
 
 function rollDice() {
   const score = Math.trunc(Math.random() * 6 + 1);
-  img.src = `img/dice-${score}.png`;
+  img.src = `img/Dice-${score}.png`;
   img.classList.remove("hidden");
   img.classList.toggle("move1");
   img.classList.toggle("move2");
