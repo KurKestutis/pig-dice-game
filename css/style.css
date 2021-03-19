@@ -110,6 +110,13 @@
   background-image: linear-gradient(to top left, rgba(202, 175, 224, 0.726) 6.2%, rgba(67, 151, 200, 0.377) 98.8%);
 }
 
+.projection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
 .active {
   -webkit-box-shadow: inset 0px 0px 36px 5px white;
           box-shadow: inset 0px 0px 36px 5px white;
