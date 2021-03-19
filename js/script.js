@@ -22,6 +22,7 @@ let scores, currentScore, activePlayer, playing, projectionScore, winningPoints;
 
 const init = function () {
   winningPoints = document.getElementById("newWinCondition").value;
+  document.getElementById("winCondition").textContent = winningPoints;
   scores = [0, 0];
   currentScore = 0;
   activePlayer = 0;
@@ -36,6 +37,9 @@ const init = function () {
   player0.classList.add("active");
   player1.classList.remove("active");
 
+  player0.classList.remove("winner");
+  player1.classList.remove("winner");
+
   projectionEl0.textContent = 0;
   projectionEl1.textContent = 0;
 };
@@ -43,11 +47,7 @@ const init = function () {
 init();
 
 btnSet.addEventListener("click", function () {
-  document
-    .querySelector(`.play-arena__player${activePlayer}`)
-    .classList.remove("winner");
   init();
-  document.getElementById("winCondition").textContent = winningPoints;
 });
 
 rollDice = () => {
@@ -135,10 +135,4 @@ btnHold.addEventListener("click", function () {
   }
 });
 
-btnNewGame.addEventListener("click", function () {
-  document
-    .querySelector(`.play-arena__player${activePlayer}`)
-    .classList.remove("winner");
-
-  init();
-});
+btnNewGame.addEventListener("click", init);
