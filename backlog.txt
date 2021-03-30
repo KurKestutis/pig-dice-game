@@ -1,0 +1,8 @@
+2021-03-30
+1. Set default winning condition.
+2. Show default winning condition when the page opens first time.
+3. Clear input field after submitting new winning condition.
+4. When scores in the projection reach winning condition automatically announce  the winner.
+5. Add responsiveness to phones screens.
+6. Write "WINNER!" in the play arena after Player name.
+7. Add ability to change players names.
