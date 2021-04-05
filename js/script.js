@@ -18,10 +18,10 @@ const btnRoll = document.querySelector(".control-panel__btn--roll");
 const btnHold = document.querySelector(".control-panel__btn--hold");
 const btnNewGame = document.querySelector(".control-panel__btn--new-game");
 
-let scores, currentScore, activePlayer, playing, projectionScore, winningPoints;
+let scores, currentScore, activePlayer, playing, projectionScore;
+let winningPoints = 50;
 
 const init = function () {
-  winningPoints = document.getElementById("newWinCondition").value;
   document.getElementById("winCondition").textContent = winningPoints;
   scores = [0, 0];
   currentScore = 0;
@@ -47,7 +47,14 @@ const init = function () {
 init();
 
 btnSet.addEventListener("click", function () {
-  init();
+  if (document.getElementById("newWinCondition").value == 0) {
+    winningPoints = 0;
+    alert("Please enter new winning condition");
+  } else {
+    winningPoints = document.getElementById("newWinCondition").value;
+    init();
+    document.getElementById("newWinCondition").value = "";
+  }
 });
 
 rollDice = () => {

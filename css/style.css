@@ -17,15 +17,19 @@
   background-image: linear-gradient(to top left, rgba(202, 175, 224, 0.726) 35%, rgba(67, 151, 200, 0.377) 90%);
 }
 
-.header__text, .header__form {
+.header__text {
   margin: 1rem;
 }
 
-.header__text__input, .header__form__input {
+.new-game-form {
+  margin: 1rem;
+}
+
+.new-game-form__input {
   border-radius: 0.5rem;
 }
 
-.btn {
+.btn-submit {
   background-color: #e0dbdf;
   width: 7rem;
   border: none;
@@ -35,11 +39,11 @@
   padding: 0.3rem;
 }
 
-.btn:hover {
+.btn-submit:hover {
   background-color: #9e7dc5;
 }
 
-.btn:active {
+.btn-submit:active {
   background-color: #e048d4;
 }
 
