@@ -6,3 +6,11 @@ DONE 3. Clear input field after submitting new winning condition.
 5. Add responsiveness to phones screens.
 6. Write "WINNER!" in the play arena after Player name.
 7. Add ability to change players names.
+2022-04-29
+8. Add favicon.
+9. Add an explanation of the rules. 
+
+
+BUG
+2022-04-29
+If no winning condition is entered it is set to zero.
