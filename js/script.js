@@ -49,7 +49,9 @@ init();
 btnSet.addEventListener("click", function () {
   if (document.getElementById("newWinCondition").value == 0) {
     winningPoints = 0;
-    alert("Please enter new winning condition");
+    alert(`    You have not entered any new winning conditions.
+    Your winning condition is set to 0`);
+    init();
   } else {
     winningPoints = document.getElementById("newWinCondition").value;
     init();
@@ -66,9 +68,8 @@ rollDice = () => {
 
   if (score !== 0) {
     projectionScore = scores[activePlayer] + score;
-    document.getElementById(
-      `projection--${activePlayer}`
-    ).textContent = projectionScore;
+    document.getElementById(`projection--${activePlayer}`).textContent =
+      projectionScore;
   }
 
   return score;
@@ -77,9 +78,8 @@ rollDice = () => {
 const changePlayer = () => {
   currentScore = 0;
   projectionScore = 0;
-  document.getElementById(
-    `current--${activePlayer}`
-  ).textContent = currentScore;
+  document.getElementById(`current--${activePlayer}`).textContent =
+    currentScore;
   document.getElementById(`projection--${activePlayer}`).textContent = 0;
   activePlayer = activePlayer === 0 ? 1 : 0;
   player0.classList.toggle("active");
@@ -104,14 +104,12 @@ btnRoll.addEventListener("click", function () {
       changePlayer();
     } else {
       currentScore += diceScore;
-      document.getElementById(
-        `current--${activePlayer}`
-      ).textContent = currentScore;
+      document.getElementById(`current--${activePlayer}`).textContent =
+        currentScore;
 
       projectionScore = scores[activePlayer] + currentScore;
-      document.getElementById(
-        `projection--${activePlayer}`
-      ).textContent = projectionScore;
+      document.getElementById(`projection--${activePlayer}`).textContent =
+        projectionScore;
     }
   }
 });
