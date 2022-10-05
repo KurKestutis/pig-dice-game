@@ -13,8 +13,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: -webkit-gradient(linear, right bottom, left top, color-stop(35%, rgba(202, 175, 224, 0.726)), color-stop(90%, rgba(67, 151, 200, 0.377)));
-  background-image: linear-gradient(to top left, rgba(202, 175, 224, 0.726) 35%, rgba(67, 151, 200, 0.377) 90%);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ede73b), to(#5764ad));
+  background-image: linear-gradient(to bottom right, #ede73b, #5764ad);
 }
 
 .header__text {
@@ -30,22 +30,29 @@
 }
 
 .btn-submit {
-  background-color: #e0dbdf;
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#574d6c), to(#ede73b));
+  background-image: linear-gradient(to top left, #574d6c, #ede73b);
   width: 7rem;
   border: none;
   padding: 0.5rem;
   border-radius: 1rem;
   cursor: pointer;
+  font-weight: 900;
+  color: #574d6c;
+  font-size: 1.1rem;
   width: 5rem;
   padding: 0.3rem;
 }
 
 .btn-submit:hover {
-  background-color: #9e7dc5;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#574d6c), to(#ede73b));
+  background-image: linear-gradient(to bottom right, #574d6c, #ede73b);
 }
 
 .btn-submit:active {
-  background-color: #e048d4;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ede73b), to(#574d6c));
+  background-image: linear-gradient(to bottom right, #ede73b, #574d6c);
+  color: #ed4d41;
 }
 
 .main {
@@ -67,8 +74,8 @@
   position: relative;
   width: 45rem;
   height: 35rem;
-  -webkit-box-shadow: 0rem 0rem 4rem 0.1rem rgba(75, 74, 74, 0.37);
-          box-shadow: 0rem 0rem 4rem 0.1rem rgba(75, 74, 74, 0.37);
+  -webkit-box-shadow: 0rem 0rem 4rem 0.1rem #1d1c1c;
+          box-shadow: 0rem 0rem 4rem 0.1rem #1d1c1c;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -77,11 +84,21 @@
 }
 
 .play-arena__player0 {
-  background-color: #447ec0;
+  background-color: #574d6c;
 }
 
 .play-arena__player1 {
-  background-color: #92377b;
+  background-color: #ede73b;
+}
+
+.play-arena .play-arena__player0.active {
+  -webkit-box-shadow: inset 0px 0px 46px 5px rgba(10, 0, 0, 0.8);
+          box-shadow: inset 0px 0px 46px 5px rgba(10, 0, 0, 0.8);
+}
+
+.play-arena .play-arena__player1.active {
+  -webkit-box-shadow: inset 0px 0px 66px 16px #0a0000;
+          box-shadow: inset 0px 0px 66px 16px #0a0000;
 }
 
 .play-arena__player0, .play-arena__player1 {
@@ -129,10 +146,13 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   padding: 1rem;
-  -webkit-box-shadow: 0rem 0rem 4rem 0.9rem rgba(251, 251, 251, 0.5);
-          box-shadow: 0rem 0rem 4rem 0.9rem rgba(251, 251, 251, 0.5);
-  background-image: -webkit-gradient(linear, right bottom, left top, color-stop(6.2%, rgba(202, 175, 224, 0.726)), color-stop(98.8%, rgba(67, 151, 200, 0.377)));
-  background-image: linear-gradient(to top left, rgba(202, 175, 224, 0.726) 6.2%, rgba(67, 151, 200, 0.377) 98.8%);
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#5764ad), to(#ede73b));
+  background-image: linear-gradient(to top left, #5764ad, #ede73b);
+}
+
+.current__label {
+  text-align: center;
+  font-weight: 900;
 }
 
 .projection {
@@ -142,9 +162,8 @@
   gap: 1rem;
 }
 
-.active {
-  -webkit-box-shadow: inset 0px 0px 36px 5px white;
-          box-shadow: inset 0px 0px 36px 5px white;
+.projection__score {
+  width: 2rem;
 }
 
 .control-panel {
@@ -179,7 +198,7 @@
   width: 6rem;
   height: 6rem;
   border-radius: 1rem;
-  border: 0.1rem solid red;
+  border: 0.1rem solid #ed4d41;
 }
 
 .control-panel__btn {
@@ -196,20 +215,33 @@
 }
 
 .control-panel__btn--new-game, .control-panel__btn--roll, .control-panel__btn--hold {
-  background-color: #e0dbdf;
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#574d6c), to(#ede73b));
+  background-image: linear-gradient(to top left, #574d6c, #ede73b);
   width: 7rem;
   border: none;
   padding: 0.5rem;
   border-radius: 1rem;
   cursor: pointer;
+  font-weight: 900;
+  color: #574d6c;
+  font-size: 1.1rem;
 }
 
 .control-panel__btn--new-game:hover, .control-panel__btn--roll:hover, .control-panel__btn--hold:hover {
-  background-color: #9e7dc5;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#574d6c), to(#ede73b));
+  background-image: linear-gradient(to bottom right, #574d6c, #ede73b);
 }
 
 .control-panel__btn--new-game:active, .control-panel__btn--roll:active, .control-panel__btn--hold:active {
-  background-color: #e048d4;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ede73b), to(#574d6c));
+  background-image: linear-gradient(to bottom right, #ede73b, #574d6c);
+  color: #ed4d41;
+}
+
+.active {
+  -webkit-box-shadow: inset 0px 0px 36px 5px #0a0000;
+          box-shadow: inset 0px 0px 36px 5px #0a0000;
+  font-weight: 900;
 }
 
 .hidden {
@@ -367,9 +399,9 @@
 }
 
 .winner {
-  background-color: #b2cc1c;
-  -webkit-box-shadow: inset 0px 0px 66px 5px #f8f8f8;
-          box-shadow: inset 0px 0px 66px 5px #f8f8f8;
+  background-color: #ed4d41;
+  -webkit-box-shadow: inset 0px 0px 106px 5px #f1f3f3;
+          box-shadow: inset 0px 0px 106px 5px #f1f3f3;
 }
 
 .footer {
@@ -377,5 +409,6 @@
   padding: 0.5rem 1rem;
   -webkit-box-shadow: 0rem 0.5rem 1.2rem 0rem rgba(112, 112, 112, 0.534);
           box-shadow: 0rem 0.5rem 1.2rem 0rem rgba(112, 112, 112, 0.534);
+  color: #d0e7fb;
 }
 /*# sourceMappingURL=style.css.map */
