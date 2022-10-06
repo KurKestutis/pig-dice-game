@@ -74,8 +74,8 @@
   position: relative;
   width: 45rem;
   height: 35rem;
-  -webkit-box-shadow: 0rem 0rem 4rem 0.1rem #1d1c1c;
-          box-shadow: 0rem 0rem 4rem 0.1rem #1d1c1c;
+  -webkit-box-shadow: 0rem 0rem 9rem 0.1em #393838;
+          box-shadow: 0rem 0rem 9rem 0.1em #393838;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
