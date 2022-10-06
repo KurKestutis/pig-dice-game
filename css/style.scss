@@ -84,11 +84,13 @@ $color_6: #ede73b;
   }
 
   .play-arena__player0.active {
-    box-shadow: inset 0px 0px 46px 5px rgba(10, 0, 0, 0.8);
+    border: 5px solid black;
+    border-radius: 1rem 0 0 1rem;
   }
 
   .play-arena__player1.active {
-    box-shadow: inset 0px 0px 66px 16px rgb(10, 0, 0);
+    border: 5px solid black;
+    border-radius: 0 1rem 1rem 0;
   }
 
   &__player0,
@@ -102,7 +104,7 @@ $color_6: #ede73b;
 
     &__player-name {
       padding-top: 3rem;
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
 
     &__points-earned {
@@ -110,6 +112,10 @@ $color_6: #ede73b;
       font-weight: 600;
     }
   }
+}
+
+.active h2 {
+  font-size: 2.8em !important;
 }
 
 .current {
@@ -172,11 +178,6 @@ $color_6: #ede73b;
       @include button();
     }
   }
-}
-
-.active {
-  box-shadow: inset 0px 0px 36px 5px rgb(10, 0, 0);
-  font-weight: 900;
 }
 
 .hidden {
@@ -246,8 +247,16 @@ $color_6: #ede73b;
 }
 
 .winner {
-  background-color: $color_5;
   box-shadow: inset 0px 0px 106px 5px rgb(241, 243, 243);
+  text-align: center;
+}
+
+.winner h2::after {
+  content: " WINNNER!";
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 3rem !important;
 }
 
 .footer {

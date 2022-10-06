@@ -92,13 +92,13 @@
 }
 
 .play-arena .play-arena__player0.active {
-  -webkit-box-shadow: inset 0px 0px 46px 5px rgba(10, 0, 0, 0.8);
-          box-shadow: inset 0px 0px 46px 5px rgba(10, 0, 0, 0.8);
+  border: 5px solid black;
+  border-radius: 1rem 0 0 1rem;
 }
 
 .play-arena .play-arena__player1.active {
-  -webkit-box-shadow: inset 0px 0px 66px 16px #0a0000;
-          box-shadow: inset 0px 0px 66px 16px #0a0000;
+  border: 5px solid black;
+  border-radius: 0 1rem 1rem 0;
 }
 
 .play-arena__player0, .play-arena__player1 {
@@ -120,12 +120,16 @@
 
 .play-arena__player0__player-name, .play-arena__player1__player-name {
   padding-top: 3rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .play-arena__player0__points-earned, .play-arena__player1__points-earned {
   font-size: 4rem;
   font-weight: 600;
+}
+
+.active h2 {
+  font-size: 2.8em !important;
 }
 
 .current {
@@ -236,12 +240,6 @@
   background-image: -webkit-gradient(linear, left top, right bottom, from(#ede73b), to(#574d6c));
   background-image: linear-gradient(to bottom right, #ede73b, #574d6c);
   color: #ed4d41;
-}
-
-.active {
-  -webkit-box-shadow: inset 0px 0px 36px 5px #0a0000;
-          box-shadow: inset 0px 0px 36px 5px #0a0000;
-  font-weight: 900;
 }
 
 .hidden {
@@ -399,9 +397,20 @@
 }
 
 .winner {
-  background-color: #ed4d41;
   -webkit-box-shadow: inset 0px 0px 106px 5px #f1f3f3;
           box-shadow: inset 0px 0px 106px 5px #f1f3f3;
+  text-align: center;
+}
+
+.winner h2::after {
+  content: " WINNNER!";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  font-size: 3rem !important;
 }
 
 .footer {
